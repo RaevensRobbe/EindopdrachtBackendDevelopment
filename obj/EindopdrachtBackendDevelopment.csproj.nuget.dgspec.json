@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {}
+    "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {}
   },
   "projects": {
-    "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {
+    "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
+        "projectUniqueName": "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
         "projectName": "EindopdrachtBackendDevelopment",
-        "projectPath": "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
+        "projectPath": "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
         "packagesPath": "C:\\Users\\robbe\\.nuget\\packages\\",
-        "outputPath": "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\obj\\",
+        "outputPath": "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -47,6 +47,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
