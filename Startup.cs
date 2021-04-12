@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Eindopdracht.Config;
 using Eindopdracht.DataContext;
+using Eindopdracht.Repositories;
+using EindopdrachtBackendDevelopment.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 namespace EindopdrachtBackendDevelopment
 {
@@ -28,12 +31,19 @@ namespace EindopdrachtBackendDevelopment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
+
             services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings"));
             services.AddDbContext<TeamContext>();
 
             services.AddControllers();
 
             services.AddTransient<ITeamContext,TeamContext>();
+            services.AddTransient<ITeamRepository,TeamRepository>();
+            services.AddTransient<IDriverRepository,DriverRepository>();
+            services.AddTransient<ISponsorRepository,SponsorRepository>();
+
+            services.AddTransient<IFormulaService, FormulaService>();
 
             services.AddSwaggerGen(c =>
             {
