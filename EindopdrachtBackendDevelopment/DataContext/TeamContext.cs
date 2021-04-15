@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Eindopdracht.Config;
-using Eindopdracht.Models;
+using EindopdrachtBackendDevelopment.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -67,6 +67,7 @@ namespace Eindopdracht.DataContext
                 RaceNumber = 16,
                 Nationality = "Monégasque",
                 CareerId = 1,
+                TeamId = 1
             });
 
             modelBuilder.Entity<Driver>().HasData(new Driver()
@@ -76,8 +77,10 @@ namespace Eindopdracht.DataContext
                 LastName = "Norris",
                 RaceNumber = 4,
                 Nationality = "British",
-                CareerId = 2
+                CareerId = 2,
+                TeamId = 2
             });
+
             modelBuilder.Entity<Driver>().HasData(new Driver()
             {
                 DriverId = 3,
@@ -85,8 +88,20 @@ namespace Eindopdracht.DataContext
                 LastName = "Vettel",
                 RaceNumber = 5,
                 Nationality = "German",
-                CareerId = 3
+                CareerId = 3,
+                TeamId = 3
             });
+
+            modelBuilder.Entity<Driver>().HasData(new Driver(){
+                DriverId= 4,
+                FirstName = "Carlos",
+                LastName = "Sainz",
+                RaceNumber = 55,
+                Nationality = "Spanish",
+                CareerId = 4,
+                TeamId = 1
+            });
+
             modelBuilder.Entity<Career>().HasData(new Career(){
                 CareerId = 1,
                 Wins = 2,
@@ -94,6 +109,7 @@ namespace Eindopdracht.DataContext
                 FastestLaps = 4,
                 DriverChampionships = 0
             });
+
             modelBuilder.Entity<Career>().HasData(new Career(){
                 CareerId = 2,
                 Wins = 0,
@@ -101,6 +117,7 @@ namespace Eindopdracht.DataContext
                 FastestLaps = 2,
                 DriverChampionships = 0
             });
+
             modelBuilder.Entity<Career>().HasData(new Career(){
                 CareerId = 3,
                 Wins = 53,
@@ -108,6 +125,15 @@ namespace Eindopdracht.DataContext
                 FastestLaps = 38,
                 DriverChampionships = 4
             });
+
+            modelBuilder.Entity<Career>().HasData(new Career(){
+                CareerId = 4,
+                Wins = 0,
+                Poles = 0,
+                FastestLaps = 1,
+                DriverChampionships = 0
+            });
+
         }
 
     }

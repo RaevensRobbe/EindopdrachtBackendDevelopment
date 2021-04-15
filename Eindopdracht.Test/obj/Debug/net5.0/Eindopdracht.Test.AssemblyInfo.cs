@@ -11,8 +11,8 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("EindopdrachtBackendDevelopment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=" +
-    "null", "D:\\howest\\BackendDevelopment\\EindopdrachtRaevensRobbe\\EindopdrachtBackendDevelopm" +
-    "ent", "EindopdrachtBackendDevelopment.csproj", "0")]
+    "null", "D:\\howest\\BackendDevelopment\\Github\\EindopdrachtBackendDevelopment\\EindopdrachtBa" +
+    "ckendDevelopment", "EindopdrachtBackendDevelopment.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eindopdracht.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

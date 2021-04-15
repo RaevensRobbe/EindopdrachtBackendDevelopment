@@ -9184,11 +9184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\howest\\BackendDevelopment\\EindopdrachtRaevensRobbe\\Eindopdracht.Test\\Eindopdracht.Test.csproj",
+      "projectUniqueName": "D:\\howest\\BackendDevelopment\\Github\\EindopdrachtBackendDevelopment\\Eindopdracht.Test\\Eindopdracht.Test.csproj",
       "projectName": "Eindopdracht.Test",
-      "projectPath": "D:\\howest\\BackendDevelopment\\EindopdrachtRaevensRobbe\\Eindopdracht.Test\\Eindopdracht.Test.csproj",
+      "projectPath": "D:\\howest\\BackendDevelopment\\Github\\EindopdrachtBackendDevelopment\\Eindopdracht.Test\\Eindopdracht.Test.csproj",
       "packagesPath": "C:\\Users\\robbe\\.nuget\\packages\\",
-      "outputPath": "D:\\howest\\BackendDevelopment\\EindopdrachtRaevensRobbe\\Eindopdracht.Test\\obj\\",
+      "outputPath": "D:\\howest\\BackendDevelopment\\Github\\EindopdrachtBackendDevelopment\\Eindopdracht.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -9212,8 +9212,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\howest\\BackendDevelopment\\EindopdrachtRaevensRobbe\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {
-              "projectPath": "D:\\howest\\BackendDevelopment\\EindopdrachtRaevensRobbe\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj"
+            "D:\\howest\\BackendDevelopment\\Github\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {
+              "projectPath": "D:\\howest\\BackendDevelopment\\Github\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj"
             }
           }
         }
