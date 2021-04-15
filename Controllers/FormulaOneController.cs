@@ -19,12 +19,13 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpGet]
-        [Route("/team/{teamid}")]
+        [Route("/team/{teamId}")]
         public async Task<ActionResult<List<Team>>> GetTeams(int teamId){
             try {
                 return new OkObjectResult(await _formulaService.GetTeam(teamId));
             } catch (Exception ex) {
-                throw ex;
+                Debug.WriteLine(ex);
+                return new StatusCodeResult(500);
             }
 
         }
@@ -35,7 +36,8 @@ namespace EindopdrachtBackendDevelopment.Controllers
             try {
                 return new OkObjectResult(await _formulaService.GetTeams());
             } catch (Exception ex) {
-                throw ex;
+                Debug.WriteLine(ex);
+                return new StatusCodeResult(500);
             }
         }
 
@@ -44,6 +46,17 @@ namespace EindopdrachtBackendDevelopment.Controllers
         public async Task<ActionResult<List<Driver>>> GetDrivers(){
             try {
                 return new OkObjectResult(await _formulaService.GetDrivers());
+            } catch (Exception ex) {
+                Debug.WriteLine(ex);
+                return new StatusCodeResult(500);
+            }
+        }
+        
+        [HttpGet]
+        [Route("/driver/{driverId}")]
+        public async Task<ActionResult<List<Driver>>> GetDriver(int driverId){
+            try {
+                return new OkObjectResult(await _formulaService.GetDriver(driverId));
             } catch (Exception ex) {
                 Debug.WriteLine(ex);
                 return new StatusCodeResult(500);
@@ -59,7 +72,8 @@ namespace EindopdrachtBackendDevelopment.Controllers
             }
             catch (Exception ex)
             {    
-                throw ex;
+                Debug.WriteLine(ex);
+                return new StatusCodeResult(500);
             }
         }
     }

@@ -11,6 +11,7 @@ namespace EindopdrachtBackendDevelopment.Services
     public interface IFormulaService
     {
         Task<SponsorDTO> AddSponsor(SponsorDTO sponsor);
+        Task<List<Driver>> GetDriver(int driverId);
         Task<List<Driver>> GetDrivers();
         Task<List<Team>> GetTeam(int teamId);
         Task<List<Team>> GetTeams();
@@ -52,6 +53,11 @@ namespace EindopdrachtBackendDevelopment.Services
         public async Task<List<Team>> GetTeams()
         {
             return await _teamRepository.GetTeams();
+        }
+
+        public async Task<List<Driver>> GetDriver(int driverId)
+        {
+            return await _driverRepository.GetDriver(driverId);
         }
         public async Task<List<Driver>> GetDrivers()
         {
