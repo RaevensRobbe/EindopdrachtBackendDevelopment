@@ -19,6 +19,17 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpGet]
+        [Route("/team/{teamid}")]
+        public async Task<ActionResult<List<Team>>> GetTeams(int teamId){
+            try {
+                return new OkObjectResult(await _formulaService.GetTeam(teamId));
+            } catch (Exception ex) {
+                throw ex;
+            }
+
+        }
+
+        [HttpGet]
         [Route("/teams")]
         public async Task<ActionResult<List<Team>>> GetTeams(){
             try {
@@ -26,7 +37,6 @@ namespace EindopdrachtBackendDevelopment.Controllers
             } catch (Exception ex) {
                 throw ex;
             }
-
         }
 
         [HttpGet]

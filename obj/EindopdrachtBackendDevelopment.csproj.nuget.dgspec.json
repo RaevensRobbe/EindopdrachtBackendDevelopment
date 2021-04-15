@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {}
+    "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {}
   },
   "projects": {
-    "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {
+    "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
+        "projectUniqueName": "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
         "projectName": "EindopdrachtBackendDevelopment",
-        "projectPath": "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
+        "projectPath": "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\EindopdrachtBackendDevelopment.csproj",
         "packagesPath": "C:\\Users\\robbe\\.nuget\\packages\\",
-        "outputPath": "D:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\obj\\",
+        "outputPath": "d:\\howest\\BackendDevelopment\\EindopdrachtBackendDevelopment\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -12,6 +12,7 @@ namespace EindopdrachtBackendDevelopment.Services
     {
         Task<SponsorDTO> AddSponsor(SponsorDTO sponsor);
         Task<List<Driver>> GetDrivers();
+        Task<List<Team>> GetTeam(int teamId);
         Task<List<Team>> GetTeams();
 
     }
@@ -33,6 +34,19 @@ namespace EindopdrachtBackendDevelopment.Services
             _driverRepository = driverRepository;
             _sponsorRepository = sponsorRepository;
             _mapper = mapper;
+        }
+
+        public async Task<List<Team>> GetTeam(int teamId)
+        {
+            try
+            {
+                return await _teamRepository.GetTeam(teamId); 
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw ex;
+            }
         }
 
         public async Task<List<Team>> GetTeams()
