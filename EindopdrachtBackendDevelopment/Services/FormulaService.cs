@@ -15,6 +15,8 @@ namespace EindopdrachtBackendDevelopment.Services
         Task<List<Driver>> GetDrivers();
         Task<List<Team>> GetTeam(int teamId);
         Task<List<Team>> GetTeams();
+        Task<List<Team>> GetTeamPerCountry(string nationality);
+        Task<List<Sponsor>> GetSponsors();
 
     }
 
@@ -50,6 +52,19 @@ namespace EindopdrachtBackendDevelopment.Services
             }
         }
 
+        public async Task<List<Team>> GetTeamPerCountry(string nationality)
+        {
+            try
+            {
+                return await _teamRepository.GetTeamPerCountry(nationality); 
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+
         public async Task<List<Team>> GetTeams()
         {
             return await _teamRepository.GetTeams();
@@ -59,6 +74,7 @@ namespace EindopdrachtBackendDevelopment.Services
         {
             return await _driverRepository.GetDriver(driverId);
         }
+        
         public async Task<List<Driver>> GetDrivers()
         {
             return await _driverRepository.GetDrivers();
@@ -86,5 +102,11 @@ namespace EindopdrachtBackendDevelopment.Services
                 throw ex;
             }
         }
+
+        public async Task<List<Sponsor>> GetSponsors()
+        {
+            return await _sponsorRepository.GetSponsors();
+        }
+
     }
 }

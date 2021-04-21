@@ -67,5 +67,23 @@ namespace Eindopdracht.Test
             Assert.NotNull(createdSponsor);
             Assert.Equal<string>("Test sponsor", createdSponsor.SponsorName);
         }
+
+        // TODO: Get sponsors
+        [Fact]
+        public async Task Get_Sponsors_Should_Return_Ok()
+        {
+            var response = await Client.GetAsync("/sponsors");
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+        
+
+        // TODO: Get team per land
+                [Fact]
+        public async Task Get_Team_Per_Country_Should_Return_Ok()
+        {
+            var response = await Client.GetAsync("/Teams/Italy");
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+        
     }
 }

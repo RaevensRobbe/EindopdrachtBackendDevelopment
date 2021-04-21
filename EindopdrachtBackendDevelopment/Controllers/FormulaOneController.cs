@@ -31,6 +31,18 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpGet]
+        [Route("/teams/{nationality}")]
+        public async Task<ActionResult<List<Team>>> GetTeamPerCountry(string nationality){
+            try {
+                return new OkObjectResult(await _formulaService.GetTeamPerCountry(nationality));
+            } catch (Exception ex) {
+                Debug.WriteLine(ex);
+                return new StatusCodeResult(500);
+            }
+
+        }
+
+        [HttpGet]
         [Route("/teams")]
         public async Task<ActionResult<List<Team>>> GetTeams(){
             try {
@@ -57,6 +69,17 @@ namespace EindopdrachtBackendDevelopment.Controllers
         public async Task<ActionResult<List<Driver>>> GetDriver(int driverId){
             try {
                 return new OkObjectResult(await _formulaService.GetDriver(driverId));
+            } catch (Exception ex) {
+                Debug.WriteLine(ex);
+                return new StatusCodeResult(500);
+            }
+        }
+
+        [HttpGet]
+        [Route("/sponsors")]
+        public async Task<ActionResult<List<Sponsor>>> GetSponsor(){
+            try {
+                return new OkObjectResult(await _formulaService.GetSponsors());
             } catch (Exception ex) {
                 Debug.WriteLine(ex);
                 return new StatusCodeResult(500);
