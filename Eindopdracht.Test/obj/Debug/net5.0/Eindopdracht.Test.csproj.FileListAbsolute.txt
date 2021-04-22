@@ -1288,3 +1288,5 @@ D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\Eindopdracht.
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\Eindopdracht.Test\obj\Debug\net5.0\ref\Eindopdracht.Test.dll
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\Eindopdracht.Test\obj\Debug\net5.0\Eindopdracht.Test.pdb
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\Eindopdracht.Test\obj\Debug\net5.0\Eindopdracht.Test.genruntimeconfig.cache
+D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\Eindopdracht.Test\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\Eindopdracht.Test\bin\Debug\net5.0\CoverletSourceRootsMapping

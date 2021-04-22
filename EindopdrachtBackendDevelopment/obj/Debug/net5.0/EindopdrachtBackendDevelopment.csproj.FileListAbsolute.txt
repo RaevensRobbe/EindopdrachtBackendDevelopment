@@ -221,7 +221,6 @@ D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtB
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Microsoft.OpenApi.dll
-D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -258,3 +257,4 @@ D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtB
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\obj\Debug\net5.0\ref\EindopdrachtBackendDevelopment.dll
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\obj\Debug\net5.0\EindopdrachtBackendDevelopment.pdb
 D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\obj\Debug\net5.0\EindopdrachtBackendDevelopment.genruntimeconfig.cache
+D:\howest\BackendDevelopment\Github\EindopdrachtBackendDevelopment\EindopdrachtBackendDevelopment\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

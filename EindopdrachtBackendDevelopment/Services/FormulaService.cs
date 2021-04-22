@@ -14,7 +14,7 @@ namespace EindopdrachtBackendDevelopment.Services
         Task<List<Driver>> GetDriver(int driverId);
         Task<List<Driver>> GetDrivers();
         Task<List<Team>> GetTeam(int teamId);
-        Task<List<Team>> GetTeams();
+        Task<List<Team>> GetTeams(bool includeSponsor);
         Task<List<Team>> GetTeamPerCountry(string nationality);
         Task<List<Sponsor>> GetSponsors();
 
@@ -65,9 +65,9 @@ namespace EindopdrachtBackendDevelopment.Services
             }
         }
 
-        public async Task<List<Team>> GetTeams()
+        public async Task<List<Team>> GetTeams(bool includeSponsor)
         {
-            return await _teamRepository.GetTeams();
+            return await _teamRepository.GetTeams(includeSponsor);
         }
 
         public async Task<List<Driver>> GetDriver(int driverId)

@@ -11,7 +11,7 @@ namespace Eindopdracht.Repositories
     public interface ITeamRepository
     {
         Task<List<Team>> GetTeam(int teamId);
-        Task<List<Team>> GetTeams();
+        Task<List<Team>> GetTeams(bool includeSponsor);
         Task<List<Team>> GetTeamPerCountry(string nationality);
     }
 
@@ -46,11 +46,16 @@ namespace Eindopdracht.Repositories
             }
         }
 
-        public async Task<List<Team>> GetTeams()
+        public async Task<List<Team>> GetTeams(bool includeSponsor)
         {
             try
             {
-                return await _context.Team.Include(s => s.TeamSponsors).ThenInclude(s => s.Sponsor).ToListAsync();
+                if (includeSponsor) {
+                    return await _context.Team.Include(s => s.TeamSponsors).ThenInclude(s => s.Sponsor).ToListAsync();
+                } else {
+                    return await _context.Team.ToListAsync();
+                }
+
             }
             catch (System.Exception ex)
             {              

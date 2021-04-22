@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using EindopdrachtBackendDevelopment.DTO;
 using EindopdrachtBackendDevelopment.Models;
 using EindopdrachtBackendDevelopment.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EindopdrachtBackendDevelopment.Controllers
 {
+    [Authorize]
     [ApiController]
     public class FormulaOneController : ControllerBase
     {
@@ -19,6 +21,7 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         [Route("/team/{teamId}")]
         public async Task<ActionResult<List<Team>>> GetTeams(int teamId){
             try {
@@ -31,6 +34,7 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         [Route("/teams/{nationality}")]
         public async Task<ActionResult<List<Team>>> GetTeamPerCountry(string nationality){
             try {
@@ -43,16 +47,19 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         [Route("/teams")]
-        public async Task<ActionResult<List<Team>>> GetTeams(){
+        public async Task<ActionResult<List<Team>>> GetTeams(bool includeSponsor){
             try {
-                return new OkObjectResult(await _formulaService.GetTeams());
+                return new OkObjectResult(await _formulaService.GetTeams(includeSponsor));
             } catch (Exception ex) {
                 Debug.WriteLine(ex);
                 return new StatusCodeResult(500);
             }
         }
 
+        // API KEY NODIG VOOR VOLGENDE CALLS
+        
         [HttpGet]
         [Route("/drivers")]
         public async Task<ActionResult<List<Driver>>> GetDrivers(){
@@ -76,6 +83,7 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         [Route("/sponsors")]
         public async Task<ActionResult<List<Sponsor>>> GetSponsor(){
             try {
@@ -87,6 +95,7 @@ namespace EindopdrachtBackendDevelopment.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("/sponsors")]
         public async Task<ActionResult<SponsorDTO>> AddSponsor(SponsorDTO sponsor) {
             try
