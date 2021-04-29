@@ -13,6 +13,7 @@ namespace EindopdrachtBackendDevelopment.Services
         Task<SponsorDTO> AddSponsor(SponsorDTO sponsor);
         Task<List<Driver>> GetDriver(int driverId);
         Task<List<Driver>> GetDrivers();
+        Task<Driver> UpdateDriver(Driver updateDriver);
         Task<List<Team>> GetTeam(int teamId);
         Task<List<Team>> GetTeams(bool includeSponsor);
         Task<List<Team>> GetTeamPerCountry(string nationality);
@@ -67,17 +68,56 @@ namespace EindopdrachtBackendDevelopment.Services
 
         public async Task<List<Team>> GetTeams(bool includeSponsor)
         {
-            return await _teamRepository.GetTeams(includeSponsor);
+            try
+            {
+                return await _teamRepository.GetTeams(includeSponsor);
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw ex;
+            }
+
         }
 
         public async Task<List<Driver>> GetDriver(int driverId)
         {
-            return await _driverRepository.GetDriver(driverId);
+            try
+            {
+                return await _driverRepository.GetDriver(driverId);
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw ex;
+            }
+            
         }
         
         public async Task<List<Driver>> GetDrivers()
         {
-            return await _driverRepository.GetDrivers();
+            try
+            {
+                return await _driverRepository.GetDrivers();
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw ex;
+            }
+            
+        }
+
+        public async Task<Driver> UpdateDriver(Driver updateDriver)
+        {
+            try
+            {
+                return await _driverRepository.UpdateDriver(updateDriver);
+            }
+            catch( System.Exception ex)
+            {
+                throw ex;
+            } 
         }
 
         public async Task<SponsorDTO> AddSponsor(SponsorDTO sponsor)
@@ -105,7 +145,16 @@ namespace EindopdrachtBackendDevelopment.Services
 
         public async Task<List<Sponsor>> GetSponsors()
         {
-            return await _sponsorRepository.GetSponsors();
+            try
+            {
+                return await _sponsorRepository.GetSponsors();
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw ex;
+            }
+            
         }
 
     }

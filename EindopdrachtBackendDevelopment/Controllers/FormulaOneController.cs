@@ -58,7 +58,7 @@ namespace EindopdrachtBackendDevelopment.Controllers
             }
         }
 
-        // API KEY NODIG VOOR VOLGENDE CALLS
+        // API KEY NODIG VOOR DE DRIVER CALLS
         
         [HttpGet]
         [Route("/drivers")]
@@ -81,6 +81,21 @@ namespace EindopdrachtBackendDevelopment.Controllers
                 return new StatusCodeResult(500);
             }
         }
+
+        [HttpPut]
+        [Route("/driver")]
+        public async Task<ActionResult<Driver>> UpdateDriver(Driver updateDriver)
+        {
+            try
+            {
+               return await _formulaService.UpdateDriver(updateDriver);
+            }
+            catch(Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
 
         [HttpGet]
         [AllowAnonymous]

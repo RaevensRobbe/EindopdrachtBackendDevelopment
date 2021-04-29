@@ -12,6 +12,7 @@ namespace Eindopdracht.Repositories
     {
         Task<List<Driver>> GetDrivers();
         Task<List<Driver>> GetDriver(int driverId);
+        Task<Driver> UpdateDriver(Driver updateDriver);
     }
 
     public class DriverRepository : IDriverRepository
@@ -30,6 +31,13 @@ namespace Eindopdracht.Repositories
         public async Task<List<Driver>> GetDriver(int driverId)
         {
             return await _context.Driver.Where(s => s.DriverId == driverId).Include(s => s.Career).ToListAsync();
+        }
+
+        public async Task<Driver> UpdateDriver(Driver updateDriver)
+        {
+            _context.Driver.Update(updateDriver);
+            await _context.SaveChangesAsync();
+            return updateDriver;
         }
     }
 }
