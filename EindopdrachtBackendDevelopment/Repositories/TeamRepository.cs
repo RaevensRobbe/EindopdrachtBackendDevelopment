@@ -51,9 +51,9 @@ namespace Eindopdracht.Repositories
             try
             {
                 if (includeSponsor) {
-                    return await _context.Team.Include(s => s.TeamSponsors).ThenInclude(s => s.Sponsor).ToListAsync();
+                    return await _context.Team.Include(s => s.TeamSponsors).ThenInclude(s => s.Sponsor).Include(s => s.Drivers).ThenInclude(s => s.Career).ToListAsync();
                 } else {
-                    return await _context.Team.ToListAsync();
+                    return await _context.Team.Include(s => s.Drivers).ThenInclude(s => s.Career).ToListAsync();
                 }
 
             }
