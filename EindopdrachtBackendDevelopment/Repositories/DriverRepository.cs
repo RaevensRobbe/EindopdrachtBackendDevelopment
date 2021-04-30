@@ -13,6 +13,9 @@ namespace Eindopdracht.Repositories
         Task<List<Driver>> GetDrivers();
         Task<List<Driver>> GetDriver(int driverId);
         Task<Driver> UpdateDriver(Driver updateDriver);
+        Task<Driver> AddDriver(Driver addDriver);
+        Task<Career> AddCareer(Career addCareer);
+        
     }
 
     public class DriverRepository : IDriverRepository
@@ -38,6 +41,19 @@ namespace Eindopdracht.Repositories
             _context.Driver.Update(updateDriver);
             await _context.SaveChangesAsync();
             return updateDriver;
+        }
+
+        public async Task<Driver> AddDriver(Driver addDriver)
+        {
+            await _context.Driver.AddAsync(addDriver);
+            await _context.SaveChangesAsync();
+            return addDriver;
+        }
+        public async Task<Career> AddCareer(Career addCareer)
+        {
+            await _context.Career.AddAsync(addCareer);
+            await _context.SaveChangesAsync();
+            return addCareer;
         }
     }
 }

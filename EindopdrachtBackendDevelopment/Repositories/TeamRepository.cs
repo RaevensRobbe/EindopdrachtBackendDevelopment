@@ -13,6 +13,7 @@ namespace Eindopdracht.Repositories
         Task<List<Team>> GetTeam(int teamId);
         Task<List<Team>> GetTeams(bool includeSponsor);
         Task<List<Team>> GetTeamPerCountry(string nationality);
+        Task<Team> AddTeam(Team newTeam);
     }
 
     public class TeamRepository : ITeamRepository
@@ -62,5 +63,14 @@ namespace Eindopdracht.Repositories
                 throw ex;
             }
         }
+
+        public async Task<Team> AddTeam(Team newTeam)
+        {
+            await _context.Team.AddAsync(newTeam);
+            await _context.SaveChangesAsync();
+            return newTeam;
+        }
+
+
     }
 }

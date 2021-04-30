@@ -14,9 +14,12 @@ namespace EindopdrachtBackendDevelopment.Services
         Task<List<Driver>> GetDriver(int driverId);
         Task<List<Driver>> GetDrivers();
         Task<Driver> UpdateDriver(Driver updateDriver);
+        Task<Driver> AddDriver(Driver addDriver);
+        Task<Career> AddCareer(Career addCareer);
         Task<List<Team>> GetTeam(int teamId);
         Task<List<Team>> GetTeams(bool includeSponsor);
         Task<List<Team>> GetTeamPerCountry(string nationality);
+        Task<Team> AddTeam(Team newTeam);
         Task<List<Sponsor>> GetSponsors();
 
     }
@@ -40,6 +43,7 @@ namespace EindopdrachtBackendDevelopment.Services
             _mapper = mapper;
         }
 
+        // Teams
         public async Task<List<Team>> GetTeam(int teamId)
         {
             try
@@ -80,6 +84,19 @@ namespace EindopdrachtBackendDevelopment.Services
 
         }
 
+        public async Task<Team> AddTeam(Team newTeam)
+        {
+            try
+            {
+                return await _teamRepository.AddTeam(newTeam);
+            }
+            catch( System.Exception ex)
+            {
+                throw ex;
+            } 
+        }
+
+        // Drivers
         public async Task<List<Driver>> GetDriver(int driverId)
         {
             try
@@ -120,6 +137,31 @@ namespace EindopdrachtBackendDevelopment.Services
             } 
         }
 
+        public async Task<Driver> AddDriver(Driver addDriver)
+        {
+            try
+            {
+                return await _driverRepository.AddDriver(addDriver);
+            }
+            catch( System.Exception ex)
+            {
+                throw ex;
+            } 
+        }
+
+        public async Task<Career> AddCareer(Career addCareer)
+        {
+            try
+            {
+                return await _driverRepository.AddCareer(addCareer);
+            }
+            catch( System.Exception ex)
+            {
+                throw ex;
+            } 
+        }
+
+        // Sponsors
         public async Task<SponsorDTO> AddSponsor(SponsorDTO sponsor)
         {
             try {

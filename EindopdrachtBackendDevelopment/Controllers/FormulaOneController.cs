@@ -20,6 +20,8 @@ namespace EindopdrachtBackendDevelopment.Controllers
             _formulaService = formulaService;
         }
 
+        // Teams 
+
         [HttpGet]
         [AllowAnonymous]
         [Route("/team/{teamId}")]
@@ -58,7 +60,23 @@ namespace EindopdrachtBackendDevelopment.Controllers
             }
         }
 
-        // API KEY NODIG VOOR DE DRIVER CALLS
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("team")]
+        public async Task<ActionResult<Team>> AddTeam(Team newTeam)
+        {
+            try
+            {
+                return new OkObjectResult(await _formulaService.AddTeam(newTeam));
+            }
+            catch (Exception ex)
+            {    
+                Debug.WriteLine(ex);
+                return new StatusCodeResult(500);
+            }
+        }        
+
+        // API KEY NODIG VOOR DE DRIVER CALLS (career bekijk ik ook onder driver calls)
         
         [HttpGet]
         [Route("/drivers")]
@@ -96,6 +114,35 @@ namespace EindopdrachtBackendDevelopment.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("/driver")]
+        public async Task<ActionResult<Driver>> addDriver(Driver addDriver)
+        {
+            try
+            {
+               return await _formulaService.AddDriver(addDriver);
+            }
+            catch(Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
+        [HttpPost]
+        [Route("/career")]
+        public async Task<ActionResult<Career>> addCareer(Career addCareer)
+        {
+            try
+            {
+               return await _formulaService.AddCareer(addCareer);
+            }
+            catch(Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
+        // Sponsors
 
         [HttpGet]
         [AllowAnonymous]
