@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Text;
 using EindopdrachtBackendDevelopment.DTO;
 using System.Diagnostics;
+using EindopdrachtBackendDevelopment.Models;
 
 namespace Eindopdracht.Test
 {
@@ -22,7 +23,7 @@ namespace Eindopdracht.Test
             Client = fixture.CreateClient();
         }
 
-        // API key nodig voor driver tests
+        //! API key nodig voor driver tests
 
         // [Fact]
         // public async Task Get_Drivers_Should_Return_Ok()
@@ -38,6 +39,7 @@ namespace Eindopdracht.Test
         //     response.StatusCode.Should().Be(HttpStatusCode.OK);
         // }
 
+        //! TEAM tests
         [Fact]
         public async Task Get_Teams_Should_Return_Ok()
         {
@@ -52,6 +54,32 @@ namespace Eindopdracht.Test
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
         
+        [Fact]
+        public async Task Get_Team_Per_Country_Should_Return_Ok()
+        {
+            var response = await Client.GetAsync("/Teams/Italy");
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task Add_Team_Should_Return_Ok()
+        {
+            var team = new Team(){
+                TeamName = "Test Team",
+                Location = "Test land"
+            };
+
+            string json = JsonConvert.SerializeObject(team);
+            Debug.WriteLine(json);
+            var response = await Client.PostAsync("/team", new StringContent(json,Encoding.UTF8, "application/json"));
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+
+            var createdTeam = JsonConvert.DeserializeObject<Team>(await response.Content.ReadAsStringAsync());
+            Assert.NotNull(createdTeam);
+            Assert.Equal<string>("Test Team", createdTeam.TeamName);
+        }
+
+        //! Sponsor tests
         [Fact]
         public async Task Add_Sponsor_Should_Return_Ok()
         {
@@ -70,22 +98,11 @@ namespace Eindopdracht.Test
             Assert.Equal<string>("Test sponsor", createdSponsor.SponsorName);
         }
 
-        // TODO: Get sponsors
         [Fact]
         public async Task Get_Sponsors_Should_Return_Ok()
         {
             var response = await Client.GetAsync("/sponsors");
             response.StatusCode.Should().Be(HttpStatusCode.OK);
-        }
-        
-
-        // TODO: Get team per land
-        [Fact]
-        public async Task Get_Team_Per_Country_Should_Return_Ok()
-        {
-            var response = await Client.GetAsync("/Teams/Italy");
-            response.StatusCode.Should().Be(HttpStatusCode.OK);
-        }
-        
+        }        
     }
 }
